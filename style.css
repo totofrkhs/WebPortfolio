@@ -1,7 +1,7 @@
 body {
     background-color: #8a2525;
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.2) 2px, transparent 2px),
+        linear-gradient(#00000033 2px, transparent 2px),
         linear-gradient(90deg, rgba(187, 20, 20, 0.4) 2px, transparent 2px),
         linear-gradient(135deg, #6b0000, #0f0000);
     background-size: 30px 30px, 30px 30px, 100% 100%;
@@ -17,8 +17,7 @@ body {
     position: relative;
 }
 
-/* Creamos una capa invisible encima del fondo que se oscurece al hacer scroll, 
-   dejando tus cajas de texto perfectamente legibles e intactas */
+
 body::before {
     content: "";
     position: fixed;
@@ -26,29 +25,29 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Empieza totalmente transparente */
-    z-index: -1; /* Se coloca detrás de las cajas de texto pero encima del color base */
+    background-color: rgba(0, 0, 0, 0); 
+    z-index: -1; 
     pointer-events: none;
     
-    /* Animación vinculada al scroll */
+  
     animation: darkenBg linear;
     animation-timeline: scroll(root);
 }
 
-/* La capa va ganando oscuridad rápidamente al bajar */
+
 @keyframes darkenBg {
     0% {
-        background-color: rgba(0, 0, 0, 0);   /* Arriba: sin oscurecer */
+        background-color: rgba(0, 0, 0, 0);   
     }
     15% {
-        background-color: rgba(8, 8, 18, 0.75); /* Al bajar un poco: se vuelve azulado/oscuro */
+        background-color: rgba(8, 8, 18, 0.75); 
     }
     100% {
-        background-color: rgba(8, 8, 18, 0.90); /* Fondo de la página: oscurecido por completo */
+        background-color: rgba(8, 8, 18, 0.90); 
     }
 }
 
-/* 2. Estilos para la caja de cristal */
+
 .glass-box {
     background: rgba(255, 255, 255, 0.007);
     backdrop-filter: blur(2px);
@@ -72,7 +71,7 @@ h1 {
          2px  2px 0 #000;
 }
 
-/* 4. Imagen */
+
 .Huey {
     max-width: 30%; 
     height: auto;
@@ -96,7 +95,7 @@ p {
     text-shadow: 0 0 8px #ff4d4d; 
 }
 
-/* 5. Botones sociales */
+
 .social-btn {
     display: inline-flex;
     align-items: center;
