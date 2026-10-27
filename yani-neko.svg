@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Yani Neko placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a1a1a"/>
+      <stop offset="1" stop-color="#4a0e0e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#8E3E2F" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <rect width="400" height="500" fill="url(#glow)"/>
+  <!-- cat ears -->
+  <polygon points="120,90 160,30 200,90" fill="#2a1a1a" stroke="#c9a227" stroke-width="2"/>
+  <polygon points="200,90 240,30 280,90" fill="#2a1a1a" stroke="#c9a227" stroke-width="2"/>
+  <!-- head -->
+  <circle cx="200" cy="160" r="70" fill="#3a2424" stroke="#c9a227" stroke-width="2"/>
+  <!-- eyes -->
+  <ellipse cx="175" cy="150" rx="10" ry="14" fill="#ff4d4d"/>
+  <ellipse cx="225" cy="150" rx="10" ry="14" fill="#ff4d4d"/>
+  <!-- nose -->
+  <polygon points="200,170 194,182 206,182" fill="#c9a227"/>
+  <!-- mouth -->
+  <path d="M188,195 Q200,205 212,195" stroke="#e8dcd5" fill="none" stroke-width="2"/>
+  <!-- body -->
+  <rect x="150" y="230" width="100" height="160" rx="12" fill="#2a1a1a" stroke="#8E3E2F" stroke-width="2"/>
+  <!-- cigarette -->
+  <rect x="230" y="185" width="90" height="6" fill="#e8dcd5" rx="2"/>
+  <rect x="315" y="183" width="8" height="10" fill="#ff4d4d"/>
+  <!-- smoke -->
+  <path d="M320,180 Q330,160 325,140 Q335,120 330,100" stroke="#aaaaaa" fill="none" stroke-width="2" opacity="0.6"/>
+  <text x="200" y="470" text-anchor="middle" font-family="serif" font-size="22" fill="#c9a227">Yani Neko</text>
+</svg>
