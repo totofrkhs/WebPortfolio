@@ -1,93 +1,128 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0a0606">
+    <meta name="theme-color" content="#080304">
     <meta name="color-scheme" content="dark">
-    <title>RAD1ANT | Gothic Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <meta name="description" content="RAD1ANT — developer of apps, webs and everything you can think of. Member of D&N Labs.">
+    <title>RAD1ANT — Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
     <canvas id="bg-shader" aria-hidden="true"></canvas>
-    <div id="fire" class="fire" aria-hidden="true"></div>
-    <a class="skip-link" href="#projects">Skip to projects</a>
+    <div id="cursor-glow" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+    <canvas id="marlboro-canvas" role="button" tabindex="0"
+            aria-label="Interactive Marlboro pack. Activate to make cigarettes rain down."></canvas>
+    <canvas id="yani-canvas" role="button" tabindex="0"
+            aria-label="Interactive Yani Neko. Activate to hear her meow."></canvas>
+
+    <a class="skip-link" href="#work">Skip to work</a>
 
     <header class="top-bar">
-        <div class="brand-wrap">
-            <img src="Huey freeman_.jfif" alt="Huey Freeman" class="huey-thumb">
+        <a class="brand-wrap" href="#top" aria-label="RAD1ANT, back to top">
+            <img class="huey-thumb" src="Huey freeman_.jfif" alt="" width="44" height="44">
             <span class="brand">RAD1ANT</span>
-        </div>
-        <nav>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+        </a>
+        <nav class="nav" aria-label="Sections">
+            <a href="#work"><span>01</span>Work</a>
+            <a href="#about"><span>02</span>About</a>
+            <a href="#contact"><span>03</span>Contact</a>
         </nav>
     </header>
 
-    <div class="glass-box hero">
-        <div class="hero-row">
-            <div class="hero-text">
-                <h1>RAD1ANT</h1>
-                <p class="hero-sub">I develop apps, webs and everything you can think of</p>
-                <p>Proud member of the aspiring dev team <span class="dn-labs">D&N Labs</span></p>
-            </div>
-        </div>
-        <canvas id="marlboro-canvas" aria-label="Interactive 3D spinning Marlboro cigarette pack" role="img"></canvas>
-    <canvas id="yani-canvas" aria-label="Interactive 3D spinning Yani Neko" role="img"></canvas>
-    <script>
-    window.showModal = function (text) {
-        var m = document.getElementById('modal');
-        document.getElementById('modal-text').textContent = text;
-        m.classList.add('open');
-    };
-    document.addEventListener('click', function (e) {
-        if (e.target && e.target.classList && e.target.classList.contains('modal-close')) {
-            document.getElementById('modal').classList.remove('open');
-        }
-        if (e.target && e.target.id === 'modal') {
-            document.getElementById('modal').classList.remove('open');
-        }
-    });
-    </script>
-    <div id="modal" class="modal" role="dialog" aria-hidden="true">
-        <div class="modal-box">
-            <button class="modal-close" aria-label="Close">&times;</button>
-            <p id="modal-text"></p>
-        </div>
-    </div>
-    </div>
+    <main id="top">
+        <section class="hero">
+            <p class="eyebrow reveal">Portfolio <span class="sep">/</span> 2026</p>
+            <h1 class="title reveal" data-text="RAD1ANT">RAD1ANT</h1>
+            <p class="hero-sub reveal">I develop apps, webs and everything you can think of</p>
+            <dl class="hero-meta reveal">
+                <div><dt>Team</dt><dd>D&amp;N Labs</dd></div>
+                <div><dt>Foundation</dt><dd>C++</dd></div>
+                <div><dt>Builds</dt><dd>Apps · Webs · Games</dd></div>
+            </dl>
+        </section>
 
-    <section id="projects">
-        <h2>My projects</h2>
-        <div class="projects-grid">
-            <div class="glass-box project-card">
-                <img src="juego1.png" alt="Captura del juego" class="Huey" loading="lazy" width="400" height="300">
-                <h3>Project Sarah</h3>
-                <p>Inspired by DarkWood, Fear and hunger and Cry of fear.</p>
-                <p>A trip through Sarah's mind after committing something she doesn't remember</p>
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <span>APPS</span><i>·</i><span>WEBS</span><i>·</i><span>GAMES</span><i>·</i>
+                <span>C++</span><i>·</i><span>THREE.JS</span><i>·</i><span>GLSL</span><i>·</i>
+                <span>D&amp;N LABS</span><i>·</i><span>GOTHIC UI</span><i>·</i>
+                <span>APPS</span><i>·</i><span>WEBS</span><i>·</i><span>GAMES</span><i>·</i>
+                <span>C++</span><i>·</i><span>THREE.JS</span><i>·</i><span>GLSL</span><i>·</i>
+                <span>D&amp;N LABS</span><i>·</i><span>GOTHIC UI</span><i>·</i>
             </div>
         </div>
 
-        <div class="projects-grid">
-            <div class="glass-box about-me">
-                <h3>About me</h3>
-                <p>I began my developer journey when I was 14 in C++, after various projects going from an app for managing the grades on a school and basic games I've decided to start a more professional journey.</p>
+        <section id="work" class="section">
+            <div class="section-head reveal">
+                <span class="index">01</span>
+                <h2>Selected work</h2>
+                <span class="count">01 / 01</span>
             </div>
-        </div>
-    </section>
 
-    <footer id="contact" class="glass-box contact-section">
-        <div class="social-icons">
-            <a href="https://github.com/totofrkhs" target="_blank" class="social-btn github">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
-            </a>
-            <a href="https://discord.com/users/1179446322097557706" target="_blank" class="social-btn discord">
-                <i class="fa-brands fa-discord" aria-hidden="true"></i> Discord
-            </a>
+            <article class="project reveal">
+                <figure class="project-media">
+                    <img src="juego1.png" alt="Project Sarah game screenshot" width="400" height="300" loading="lazy">
+                    <figcaption>Project Sarah — in development</figcaption>
+                </figure>
+                <div class="project-body">
+                    <h3>Project Sarah</h3>
+                    <p>Inspired by Darkwood, Fear &amp; Hunger and Cry of Fear.</p>
+                    <p>A trip through Sarah's mind after committing something she doesn't remember.</p>
+                    <ul class="tags">
+                        <li>Game</li>
+                        <li>Psychological horror</li>
+                        <li>Narrative</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="section-head reveal">
+                <span class="index">02</span>
+                <h2>About</h2>
+            </div>
+            <div class="about-grid">
+                <p class="about-lead reveal">
+                    I began my developer journey when I was 14 in C++, after various projects going from an
+                    app for managing the grades on a school and basic games I've decided to start a more
+                    professional journey.
+                </p>
+                <ul class="facts reveal">
+                    <li><span>14</span>Age I started writing code</li>
+                    <li><span>C++</span>First language</li>
+                    <li><span>D&amp;N</span>Where I build now</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="contact">
+        <div class="contact-inner">
+            <p class="eyebrow reveal">03 <span class="sep">/</span> Contact</p>
+            <h2 class="contact-title reveal">Let's build<br>something.</h2>
+            <div class="social-icons reveal">
+                <a href="https://github.com/totofrkhs" target="_blank" rel="noopener" class="social-btn">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    <span>GitHub</span>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+                <a href="https://discord.com/users/1179446322097557706" target="_blank" rel="noopener" class="social-btn">
+                    <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                    <span>Discord</span>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+            <p class="colophon">© 2026 RAD1ANT — hand-written HTML, CSS &amp; Three.js.</p>
         </div>
     </footer>
 
@@ -95,52 +130,81 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
     <script>
+    /* Marlboro pack scene: OBJ/MTL, glow sprite, raycast click -> cigarette rain */
     (function () {
         const canvas = document.getElementById('marlboro-canvas');
         if (!canvas || typeof THREE === 'undefined') return;
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { canvas.style.display = 'none'; return; }
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce) { canvas.style.display = 'none'; return; }
 
         const scene = new THREE.Scene();
-        scene.fog = new THREE.Fog(0x0a0606, 4, 12);
-
         const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-        camera.position.set(0, 1.2, 4.2);
+        camera.position.set(0, 0.9, 3.5);
 
         const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
-        renderer.shadowMap.enabled = true;
 
-        const ambient = new THREE.AmbientLight(0x3a1a1a, 0.6);
-        scene.add(ambient);
-        const dir = new THREE.DirectionalLight(0xffc9a0, 1.1);
-        dir.position.set(3, 5, 4);
-        dir.castShadow = true;
-        scene.add(dir);
-        const pointRed = new THREE.PointLight(0x8E3E2F, 1.4, 8);
+        scene.add(new THREE.AmbientLight(0x3a1a1a, 0.65));
+        const key = new THREE.DirectionalLight(0xffc9a0, 1.15);
+        key.position.set(3, 5, 4);
+        scene.add(key);
+        const pointRed = new THREE.PointLight(0x8e3e2f, 1.4, 8);
         pointRed.position.set(-2, 1, 2);
         scene.add(pointRed);
-        const rim = new THREE.DirectionalLight(0xe8e0d8, 0.4);
+        const rim = new THREE.DirectionalLight(0xe8e0d8, 0.45);
         rim.position.set(-4, 2, -3);
         scene.add(rim);
 
         const pack = new THREE.Group();
         scene.add(pack);
 
+        /* additive glow behind the pack */
+        const glowCanvas = document.createElement('canvas');
+        glowCanvas.width = glowCanvas.height = 128;
+        const gctx = glowCanvas.getContext('2d');
+        const grad = gctx.createRadialGradient(64, 64, 0, 64, 64, 64);
+        grad.addColorStop(0, 'rgba(176,32,42,0.85)');
+        grad.addColorStop(0.45, 'rgba(142,62,47,0.28)');
+        grad.addColorStop(1, 'rgba(0,0,0,0)');
+        gctx.fillStyle = grad;
+        gctx.fillRect(0, 0, 128, 128);
+        const glowTex = new THREE.CanvasTexture(glowCanvas);
+        const glow = new THREE.Sprite(new THREE.SpriteMaterial({
+            map: glowTex, blending: THREE.AdditiveBlending, transparent: true, depthWrite: false, opacity: 0.9
+        }));
+        glow.scale.set(3.2, 3.2, 1);
+        glow.position.z = -1;
+        scene.add(glow);
+
+        /* cigarette rain */
         const rainGroup = new THREE.Group();
         scene.add(rainGroup);
-        const rainDrops = [];
+        const drops = [];
+        const dropGeo = new THREE.CylinderGeometry(0.014, 0.014, 0.34, 6);
+        const dropMat = new THREE.MeshStandardMaterial({ color: 0xf3ece2, roughness: 0.35, metalness: 0.05 });
+        const tipGeo = new THREE.CylinderGeometry(0.016, 0.016, 0.07, 6);
+        const tipMat = new THREE.MeshStandardMaterial({ color: 0x59211a, roughness: 0.8 });
+
         function spawnRain() {
-            for (let i = 0; i < 40; i++) {
-                const geo = new THREE.BoxGeometry(0.06, 0.4, 0.06);
-                const mat = new THREE.MeshStandardMaterial({ color: 0xf2f0ea, roughness: 0.4 });
-                const c = new THREE.Mesh(geo, mat);
-                c.position.set((Math.random() - 0.5) * 4, 3 + Math.random() * 2, (Math.random() - 0.5) * 2);
-                c.userData.vy = -(0.02 + Math.random() * 0.03);
-                c.userData.rot = Math.random() * 0.1;
-                rainGroup.add(c);
-                rainDrops.push(c);
+            for (let i = 0; i < 34; i++) {
+                const cig = new THREE.Group();
+                const body = new THREE.Mesh(dropGeo, dropMat);
+                const tip = new THREE.Mesh(tipGeo, tipMat);
+                tip.position.y = -0.15;
+                cig.add(body, tip);
+                cig.position.set((Math.random() - 0.5) * 3.2, 2.2 + Math.random() * 1.8, (Math.random() - 0.5) * 2.2);
+                cig.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
+                cig.userData = {
+                    vy: -(0.014 + Math.random() * 0.022),
+                    rx: (Math.random() - 0.5) * 0.06,
+                    rz: (Math.random() - 0.5) * 0.06,
+                    drift: (Math.random() - 0.5) * 0.006
+                };
+                rainGroup.add(cig);
+                drops.push(cig);
             }
         }
 
@@ -155,58 +219,60 @@
             objLoader.load('MarlboroModel.obj', function (object) {
                 const box = new THREE.Box3().setFromObject(object);
                 const size = box.getSize(new THREE.Vector3());
-                const scale = 1.6 / Math.max(size.x, size.y, size.z);
+                const scale = 1.55 / Math.max(size.x, size.y, size.z);
                 object.scale.setScalar(scale);
                 const center = box.getCenter(new THREE.Vector3());
                 object.position.sub(center.multiplyScalar(scale));
-                object.traverse(function (child) {
-                    if (child.isMesh) { child.castShadow = true; child.receiveShadow = true; }
-                });
                 pack.add(object);
+            }, undefined, function () {
+                /* model failed: keep a stand-in so the canvas is never empty */
+                const fallback = new THREE.Mesh(
+                    new THREE.BoxGeometry(1, 1.3, 0.4),
+                    new THREE.MeshStandardMaterial({ color: 0xf0ebe2, roughness: 0.5 })
+                );
+                pack.add(fallback);
             });
         });
-
-        const planeGeo = new THREE.PlaneGeometry(8, 8);
-        const planeMat = new THREE.ShadowMaterial({ opacity: 0.45 });
-        const plane = new THREE.Mesh(planeGeo, planeMat);
-        plane.rotation.x = -Math.PI / 2;
-        plane.position.y = -1.35;
-        plane.receiveShadow = true;
-        scene.add(plane);
 
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
         controls.dampingFactor = 0.08;
         controls.enablePan = false;
-        controls.minDistance = 2.5;
-        controls.maxDistance = 7;
+        controls.enableZoom = false;
+        controls.minPolarAngle = Math.PI * 0.28;
+        controls.maxPolarAngle = Math.PI * 0.72;
         controls.autoRotate = true;
         controls.autoRotateSpeed = 1.6;
 
-        canvas.addEventListener('mouseenter', function () { controls.autoRotate = false; });
-        canvas.addEventListener('mouseleave', function () { controls.autoRotate = true; });
+        canvas.addEventListener('pointerenter', function () { controls.autoRotate = false; });
+        canvas.addEventListener('pointerleave', function () { controls.autoRotate = true; });
+
+        let burst = 0;
+        function trigger() {
+            burst = 1;
+            controls.autoRotateSpeed = 11;
+            setTimeout(function () { controls.autoRotateSpeed = 1.6; }, 1200);
+            spawnRain();
+        }
 
         const raycaster = new THREE.Raycaster();
-        const mouse = new THREE.Vector2();
-        canvas.addEventListener('click', function (e) {
+        const pointer = new THREE.Vector2();
+        function hit(e) {
             const rect = canvas.getBoundingClientRect();
-            mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-            mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-            raycaster.setFromCamera(mouse, camera);
-            const hits = raycaster.intersectObject(pack, true);
-            if (hits.length) {
-                controls.autoRotateSpeed = 10;
-                setTimeout(function () { controls.autoRotateSpeed = 1.6; }, 1400);
-                pack.scale.set(1.25, 1.25, 1.25);
-                setTimeout(function () { pack.scale.set(1, 1, 1); }, 280);
-                spawnRain();
-            }
+            pointer.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+            pointer.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+            raycaster.setFromCamera(pointer, camera);
+            return raycaster.intersectObject(pack, true).length > 0;
+        }
+        canvas.addEventListener('click', function (e) { if (hit(e)) trigger(); });
+        canvas.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
         });
 
         function resize() {
             const w = canvas.clientWidth;
             const h = canvas.clientHeight;
-            if (w === 0 || h === 0) return;
+            if (!w || !h) return;
             renderer.setSize(w, h, false);
             camera.aspect = w / h;
             camera.updateProjectionMatrix();
@@ -217,18 +283,32 @@
             requestAnimationFrame(animate);
             resize();
             const t = clock.getElapsedTime();
-            pack.rotation.y += 0.003;
-            pack.position.y = Math.sin(t * 0.8) * 0.08;
-            pointRed.intensity = 1.2 + Math.sin(t * 1.5) * 0.3;
-            for (let i = rainDrops.length - 1; i >= 0; i--) {
-                const d = rainDrops[i];
+
+            pack.rotation.y += 0.004;
+            pack.position.y = Math.sin(t * 0.8) * 0.07;
+
+            if (burst > 0) {
+                burst = Math.max(0, burst - 0.045);
+                const s = 1 + Math.sin(burst * Math.PI) * 0.22;
+                pack.scale.setScalar(s);
+                glow.material.opacity = 0.9 + burst * 0.9;
+                glow.scale.setScalar(3.2 + burst * 1.6);
+            }
+
+            pointRed.intensity = 1.25 + Math.sin(t * 1.5) * 0.3;
+
+            for (let i = drops.length - 1; i >= 0; i--) {
+                const d = drops[i];
                 d.position.y += d.userData.vy;
-                d.rotation.x += d.userData.rot;
-                if (d.position.y < -4) {
+                d.position.x += d.userData.drift;
+                d.rotation.x += d.userData.rx;
+                d.rotation.z += d.userData.rz;
+                if (d.position.y < -2.6) {
                     rainGroup.remove(d);
-                    rainDrops.splice(i, 1);
+                    drops.splice(i, 1);
                 }
             }
+
             controls.update();
             renderer.render(scene, camera);
         }
@@ -236,7 +316,9 @@
         window.addEventListener('resize', resize);
     })();
     </script>
+
     <script>
+    /* Yani Neko: separate canvas, raycast click -> meow */
     (function () {
         const canvas = document.getElementById('yani-canvas');
         if (!canvas || typeof THREE === 'undefined') return;
@@ -250,63 +332,92 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
 
-        const ambient = new THREE.AmbientLight(0x3a1a1a, 0.8);
-        scene.add(ambient);
-        const dir = new THREE.DirectionalLight(0xffc9a0, 1.0);
-        dir.position.set(2, 3, 4);
-        scene.add(dir);
-
         const tex = new THREE.TextureLoader().load('yani-neko.webp');
-        const geo = new THREE.PlaneGeometry(1.6, 2.2);
-        const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, side: THREE.DoubleSide });
-        const mesh = new THREE.Mesh(geo, mat);
+        const mesh = new THREE.Mesh(
+            new THREE.PlaneGeometry(1.7, 2.35),
+            new THREE.MeshBasicMaterial({ map: tex, transparent: true, side: THREE.DoubleSide })
+        );
         scene.add(mesh);
 
+        /* fit the artwork to the frustum without distorting it */
+        function fitPlane() {
+            const img = tex.image;
+            if (!img || !img.width || !img.height) return;
+            const ratio = img.width / img.height;
+            let h = 2.7;
+            let w = h * ratio;
+            if (w > 2.9) { w = 2.9; h = w / ratio; }
+            mesh.geometry.dispose();
+            mesh.geometry = new THREE.PlaneGeometry(w, h);
+        }
+        if (tex.image && tex.image.width) fitPlane();
+        else {
+            const wait = setInterval(function () {
+                if (tex.image && tex.image.width) { fitPlane(); clearInterval(wait); }
+            }, 120);
+            setTimeout(function () { clearInterval(wait); }, 6000);
+        }
+
+        const miau = new Audio('miau.mp3');
+        miau.volume = 0.35;
+
+        let pop = 0;
+        function trigger() {
+            pop = 1;
+            miau.currentTime = 0;
+            miau.play().catch(function () {});
+        }
+
+        const raycaster = new THREE.Raycaster();
+        const pointer = new THREE.Vector2();
+        function hit(e) {
+            const rect = canvas.getBoundingClientRect();
+            pointer.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+            pointer.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+            raycaster.setFromCamera(pointer, camera);
+            return raycaster.intersectObject(mesh).length > 0;
+        }
+        canvas.addEventListener('click', function (e) { if (hit(e)) trigger(); });
+        canvas.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
+        });
+
         function resize() {
-            const w = canvas.clientWidth; const h = canvas.clientHeight;
-            if (w === 0 || h === 0) return;
+            const w = canvas.clientWidth;
+            const h = canvas.clientHeight;
+            if (!w || !h) return;
             renderer.setSize(w, h, false);
             camera.aspect = w / h;
             camera.updateProjectionMatrix();
         }
 
-        const raycaster = new THREE.Raycaster();
-        const mouse = new THREE.Vector2();
-        const miau = new Audio('miau.mp3');
-        miau.volume = 0.35;
-        canvas.addEventListener('click', function (e) {
-            const rect = canvas.getBoundingClientRect();
-            mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-            mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-            raycaster.setFromCamera(mouse, camera);
-            const hits = raycaster.intersectObject(mesh);
-            if (hits.length) {
-                mesh.scale.set(1.3, 1.3, 1);
-                setTimeout(function () { mesh.scale.set(1, 1, 1); }, 300);
-                miau.currentTime = 0;
-                miau.play();
-            }
-        });
-
-        const clock = new THREE.Clock();
         function animate() {
             requestAnimationFrame(animate);
             resize();
             mesh.rotation.y += 0.004;
+            if (pop > 0) {
+                pop = Math.max(0, pop - 0.05);
+                const s = 1 + Math.sin(pop * Math.PI) * 0.18;
+                mesh.scale.set(s, s, 1);
+            }
             renderer.render(scene, camera);
         }
         animate();
         window.addEventListener('resize', resize);
     })();
     </script>
+
     <script>
+    /* Background: GLSL displacement plane + ember field + rising sparks */
     (function () {
         if (typeof THREE === 'undefined') return;
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         const canvas = document.getElementById('bg-shader');
+        if (!canvas) return;
+
         const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
 
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
@@ -319,26 +430,59 @@
             void main() {
                 vUv = uv;
                 vec3 pos = position;
-                float wave1 = sin(pos.x * 2.0 + uTime * 0.8) * 0.15;
-                float wave2 = sin(pos.y * 3.0 + uTime * 0.6) * 0.12;
-                float wave3 = cos((pos.x + pos.y) * 1.5 + uTime * 1.0) * 0.1;
-                pos.z += wave1 + wave2 + wave3;
+                float w1 = sin(pos.x * 1.8 + uTime * 0.55) * 0.24;
+                float w2 = sin(pos.y * 2.6 + uTime * 0.42) * 0.20;
+                float w3 = cos((pos.x + pos.y) * 1.3 + uTime * 0.7) * 0.18;
+                pos.z += w1 + w2 + w3;
                 vElev = pos.z;
                 gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
             }
         `;
+
         const fragmentShader = `
             uniform float uTime;
+            uniform float uAspect;
             varying vec2 vUv;
             varying float vElev;
+
+            float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+
+            float noise(vec2 p) {
+                vec2 i = floor(p);
+                vec2 f = fract(p);
+                float a = hash(i);
+                float b = hash(i + vec2(1.0, 0.0));
+                float c = hash(i + vec2(0.0, 1.0));
+                float d = hash(i + vec2(1.0, 1.0));
+                vec2 u = f * f * (3.0 - 2.0 * f);
+                return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+            }
+
             void main() {
-                float glow = 0.5 + 0.5 * sin(vElev * 8.0 + uTime * 1.2);
-                vec3 deep = vec3(0.03, 0.01, 0.01);
-                vec3 red = vec3(0.55, 0.06, 0.08);
-                vec3 bone = vec3(0.91, 0.88, 0.85);
-                vec3 col = mix(deep, red, glow * 0.7);
-                col = mix(col, bone, smoothstep(0.6, 1.0, glow) * 0.15);
-                float alpha = 0.55 + glow * 0.25;
+                float glow = 0.5 + 0.5 * sin(vElev * 7.0 + uTime * 1.1);
+                float n = noise(vUv * 5.0 + vec2(uTime * 0.12, uTime * 0.08));
+                float n2 = noise(vUv * 13.0 - vec2(uTime * 0.06));
+
+                vec3 deep  = vec3(0.020, 0.006, 0.008);
+                vec3 red   = vec3(0.34, 0.025, 0.045);
+                vec3 ember = vec3(0.90, 0.24, 0.06);
+                vec3 bone  = vec3(0.91, 0.88, 0.85);
+
+                vec3 col = mix(deep, red, glow * 0.55);
+                col = mix(col, ember, smoothstep(0.70, 1.0, n * n2) * 0.20);
+                col = mix(col, bone, smoothstep(0.80, 1.0, glow) * 0.07);
+
+                float N = 64.0;
+                vec2 sp = vec2(vUv.x * N * uAspect, vUv.y * N);
+                sp.y -= uTime * 5.0;
+                vec2 cell = floor(sp);
+                vec2 f = fract(sp) - 0.5;
+                float s = hash(cell);
+                float flicker = 0.55 + 0.45 * sin(uTime * 5.0 + s * 6.2831);
+                float spark = smoothstep(0.26, 0.0, length(f)) * step(0.975, s) * flicker;
+                col += spark * vec3(1.0, 0.40, 0.12);
+
+                float alpha = 0.42 + glow * 0.16 + spark * 0.4;
                 gl_FragColor = vec4(col, alpha);
             }
         `;
@@ -346,28 +490,91 @@
         const material = new THREE.ShaderMaterial({
             vertexShader: vertexShader,
             fragmentShader: fragmentShader,
-            uniforms: { uTime: { value: 0 } },
+            uniforms: {
+                uTime: { value: 0 },
+                uAspect: { value: window.innerWidth / window.innerHeight }
+            },
             transparent: true,
             side: THREE.DoubleSide
         });
 
-        const geometry = new THREE.PlaneGeometry(8, 8, 64, 64);
-        const mesh = new THREE.Mesh(geometry, material);
+        const mesh = new THREE.Mesh(new THREE.PlaneGeometry(9, 9, 64, 64), material);
+        mesh.position.z = -1;
         scene.add(mesh);
 
         const clock = new THREE.Clock();
-        function animate() {
+        (function animate() {
             requestAnimationFrame(animate);
             material.uniforms.uTime.value = clock.getElapsedTime();
             renderer.render(scene, camera);
-        }
-        animate();
+        })();
 
         window.addEventListener('resize', function () {
             renderer.setSize(window.innerWidth, window.innerHeight);
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
+            material.uniforms.uAspect.value = camera.aspect;
         });
+    })();
+    </script>
+
+    <script>
+    /* UI: cursor aura, reveals, tilt, scroll progress, modal */
+    (function () {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const glow = document.getElementById('cursor-glow');
+        if (glow && !reduce && window.matchMedia('(pointer: fine)').matches) {
+            let x = window.innerWidth / 2, y = window.innerHeight / 2, tx = x, ty = y;
+            window.addEventListener('pointermove', function (e) { tx = e.clientX; ty = e.clientY; });
+            (function loop() {
+                x += (tx - x) * 0.12;
+                y += (ty - y) * 0.12;
+                glow.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%,-50%)';
+                requestAnimationFrame(loop);
+            })();
+        }
+
+        const bar = document.getElementById('progress-bar');
+        function updateProgress() {
+            if (!bar) return;
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+        }
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('load', updateProgress);
+        updateProgress();
+        const items = document.querySelectorAll('.reveal');
+        if (reduce || !('IntersectionObserver' in window)) {
+            items.forEach(function (el) { el.classList.add('is-in'); });
+        } else {
+            const io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-in');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+            items.forEach(function (el) { io.observe(el); });
+            /* safety net: nothing may stay invisible */
+            setTimeout(function () {
+                items.forEach(function (el) { el.classList.add('is-in'); });
+            }, 2500);
+        }
+
+        if (!reduce && window.matchMedia('(pointer: fine)').matches) {
+            document.querySelectorAll('.project, .facts li').forEach(function (card) {
+                card.addEventListener('pointermove', function (e) {
+                    const r = card.getBoundingClientRect();
+                    const px = (e.clientX - r.left) / r.width - 0.5;
+                    const py = (e.clientY - r.top) / r.height - 0.5;
+                    card.style.transform =
+                        'perspective(1100px) rotateX(' + (-py * 3).toFixed(2) + 'deg) rotateY(' + (px * 3).toFixed(2) + 'deg)';
+                });
+                card.addEventListener('pointerleave', function () { card.style.transform = ''; });
+            });
+        }
     })();
     </script>
 </body>
